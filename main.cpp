@@ -20,16 +20,27 @@ void print(string name){
 	std::cout << name << endl;
 }
 
+int len(string word){
+	int count = 0;
+	for(int i = 0;i < word.size();i++){
+		count += 1;
+	}
+	return count;
+}
 void print(int name){
 	std::cout << name << endl;
 }
 
+void sha256(string code){
+	string bn = str_to_bin(code) + " 1";
 
+}
 
-
+//main - is a demo function 
 int main(){
 	print("Test");
 	print(10);
-	print(str_to_bin("AB"));
+	print(str_to_bin("hello word"));
+	print(len("test"));
 	return 0;
 }
