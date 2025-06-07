@@ -4,7 +4,7 @@
 #include <string>
 #include <math.h>
 #include <bitset>
-
+#include <cstdint>
 using namespace std;
 
 
@@ -31,10 +31,18 @@ void print(int name){
 	std::cout << name << endl;
 }
 
-void sha256(string code){
-	string bn = str_to_bin(code) + " 1";
-
+void sha256v(){
+	const int k = 31,mod = 1e9+7;
+	string s = "ajdfkljfklsdf";
+	long long h = 0, m = 1;
+	for (char c : s) {
+	    int x = (int) (c - 'a' + 1);
+	    h = (h + m * x) % mod;
+	    m = (m * k) % mod;
+	}
+	std::cout << m << endl;  
 }
+
 
 //main - is a demo function 
 int main(){
